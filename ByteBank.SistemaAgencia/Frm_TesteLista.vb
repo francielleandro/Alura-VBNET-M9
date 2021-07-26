@@ -1,4 +1,5 @@
 ﻿Imports ByteBank.Bibliotecas.Classes.Clientes
+Imports ByteBank.Bibliotecas.Classes.Criterios
 
 Public Class Frm_TesteLista
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -164,6 +165,34 @@ Public Class Frm_TesteLista
         For I As Integer = 0 To Paginas.Count - 1
             MsgBox(Paginas(I))
         Next
+
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim Conta1 As New ContaCorrente(277, 223444, "João")
+        Conta1.Depositar(10000)
+
+        Dim Conta2 As New ContaCorrente(277, 255645, "Pedro")
+        Conta2.Depositar(5000)
+
+        Dim Conta3 As New ContaCorrente(500, 166323, "Alberto")
+        Conta3.Depositar(7000)
+
+        Dim ListaContasCorrentes As New List(Of ContaCorrente)
+        ListaContasCorrentes.Add(Conta1)
+        ListaContasCorrentes.Add(Conta2)
+        ListaContasCorrentes.Add(Conta3)
+
+        MsgBox("Lista de contas original: " + String.Join(",", ListaContasCorrentes))
+
+        ListaContasCorrentes.Sort(New CriterioContaCorrenteNome())
+        MsgBox("Lista de contas ordenada por nome: " + String.Join(",", ListaContasCorrentes))
+
+        ListaContasCorrentes.Sort(New CriterioContaCorrenteSaldo())
+        MsgBox("Lista de contas ordenada por saldo: " + String.Join(",", ListaContasCorrentes))
+
+        ListaContasCorrentes.Sort(New CriterioContaCorrenteAgenciaNumero())
+        MsgBox("Lista de contas ordenada por agencia/numero: " + String.Join(",", ListaContasCorrentes))
 
     End Sub
 End Class

@@ -75,6 +75,9 @@
     <Compile Include="Classes\Clientes\ContaCorrente.vb" />
     <Compile Include="Classes\Clientes\OperacaoFinanceiraException.vb" />
     <Compile Include="Classes\Clientes\ValorSacadoMenorSaldoException.vb" />
+    <Compile Include="Classes\Criterios\CriterioContaCorrenteAgenciaNumero.vb" />
+    <Compile Include="Classes\Criterios\CriterioContaCorrenteNome.vb" />
+    <Compile Include="Classes\Criterios\CriterioContaCorrenteSaldo.vb" />
     <Compile Include="Classes\Externos\Representante.vb" />
     <Compile Include="Classes\Funcionarios\Auxiliar.vb" />
     <Compile Include="Classes\Funcionarios\Caixa.vb" />
