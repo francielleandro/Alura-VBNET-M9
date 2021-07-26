@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B557C705-966E-417A-B6D5-521A65349A90}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ByteBank.SistemaAgencia.My.MyApplication</StartupObject>
+    <RootNamespace>ByteBank.SistemaAgencia</RootNamespace>
+    <AssemblyName>ByteBank.SistemaAgencia</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ByteBank.SistemaAgencia.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ByteBank.SistemaAgencia.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Humanizer, Version=2.5.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Humanizer.Core.2.5.1\lib\netstandard2.0\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Aleatorio.vb" />
+    <Compile Include="Classes\Estagiario.vb" />
+    <Compile Include="Classes\Lista.vb" />
+    <Compile Include="Classes\ListaDeContasCorrentes.vb" />
+    <Compile Include="Classes\ListaDeObjects.vb" />
+    <Compile Include="Classes\ListaExtensoesModulo.vb" />
+    <Compile Include="Classes\ListaShared.vb" />
+    <Compile Include="Frm_ContasCorrentesAgencia.Designer.vb">
+      <DependentUpon>Frm_ContasCorrentesAgencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ContasCorrentesAgencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ContasCorrentesAgenciaDic.Designer.vb">
+      <DependentUpon>Frm_ContasCorrentesAgenciaDic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ContasCorrentesAgenciaDic.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ContasCorrentesArray.Designer.vb">
+      <DependentUpon>Frm_ContasCorrentesArray.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ContasCorrentesArray.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ContasCorrentesListas.Designer.vb">
+      <DependentUpon>Frm_ContasCorrentesListas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ContasCorrentesListas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Principal01.Designer.vb">
+      <DependentUpon>Frm_Principal01.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Principal01.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Simulacao.designer.vb">
+      <DependentUpon>Frm_Simulacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Simulacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TesteLista.Designer.vb">
+      <DependentUpon>Frm_TesteLista.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_TesteLista.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Frm_ContasCorrentesAgencia.resx">
+      <DependentUpon>Frm_ContasCorrentesAgencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ContasCorrentesAgenciaDic.resx">
+      <DependentUpon>Frm_ContasCorrentesAgenciaDic.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ContasCorrentesArray.resx">
+      <DependentUpon>Frm_ContasCorrentesArray.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ContasCorrentesListas.resx">
+      <DependentUpon>Frm_ContasCorrentesListas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Principal01.resx">
+      <DependentUpon>Frm_Principal01.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Simulacao.resx">
+      <DependentUpon>Frm_Simulacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TesteLista.resx">
+      <DependentUpon>Frm_TesteLista.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ByteBank.Bibliotecas\ByteBank.Bibliotecas.vbproj">
+      <Project>{d3c78bb8-1e56-472b-a6cf-b917b0891b7a}</Project>
+      <Name>ByteBank.Bibliotecas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
