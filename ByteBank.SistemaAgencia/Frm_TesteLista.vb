@@ -321,4 +321,124 @@ Public Class Frm_TesteLista
         MsgBox("Lista de contas concatenadas " + String.Join(",", ListaAuxiliar))
 
     End Sub
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+
+        ' Criar uma lista de contas correntes e clientes
+
+        Dim Cliente As New List(Of Cliente)
+        Cliente.Add(CriarCliente("123123123123", "João da Silva", "Engenheiro"))
+        Cliente.Add(CriarCliente("123123129999", "Pedro Alcantara", "Médico"))
+        Cliente.Add(CriarCliente("123123888888", "Luzia Medeiros", "Mecânico"))
+        Cliente.Add(CriarCliente("125656565656", "Márcia Andrade", "Administrador"))
+        Cliente.Add(CriarCliente("186868686868", "Joana Silveira", "Empresário"))
+        Cliente.Add(CriarCliente("139393939393", "Marcelo Almeira", "Motorista"))
+        Cliente.Add(CriarCliente("186868686868", "Vitor Junior", "Analista de Sistemas"))
+
+        Dim Contas As New List(Of ContaCorrente)
+        Contas.Add(New ContaCorrente(277, 123221))
+        Contas(0).titular = Cliente(0)
+        Contas.Add(New ContaCorrente(277, 133323))
+        Contas(1).titular = Cliente(0)
+        Contas.Add(New ContaCorrente(277, 244323))
+        Contas(2).titular = Cliente(2)
+        Contas.Add(New ContaCorrente(277, 124543))
+        Contas(3).titular = Cliente(1)
+        Contas.Add(New ContaCorrente(277, 543434))
+        Contas(4).titular = Cliente(1)
+        Contas.Add(New ContaCorrente(277, 653443))
+        Contas(5).titular = Cliente(3)
+        Contas.Add(New ContaCorrente(277, 126544))
+        Contas(6).titular = Cliente(4)
+        Contas.Add(New ContaCorrente(277, 748383))
+        Contas(7).titular = Cliente(5)
+
+
+        ' Conta Corrente : Agencia (Int), Conta (Int), cfp (string), saldo (double)
+
+        Dim Dt As New DataTable
+        Dt.Columns.Add(CriarColuna("Agencia", "System.Int32"))
+        Dt.Columns.Add(CriarColuna("Conta", "System.Int32"))
+        Dt.Columns.Add(CriarColuna("CPF", "System.String"))
+        Dt.Columns.Add(CriarColuna("Saldo", "System.Double"))
+
+        Dt.TableName = "Contas Correntes"
+
+        For I As Integer = 0 To Contas.Count - 1
+            Dim ContaAtual As ContaCorrente = Contas(I)
+            Dim Dr As DataRow = Dt.NewRow
+
+            Dr(0) = ContaAtual.agencia
+            Dr(1) = ContaAtual.numero
+            Dr(2) = ContaAtual.titular.cpf
+            Dr(3) = ContaAtual.saldo
+
+            Dt.Rows.Add(Dr)
+        Next
+
+        For I As Integer = 0 To Dt.Rows.Count - 1
+            Dim vSaida As String = ""
+            For J As Integer = 0 To Dt.Columns.Count - 1
+                vSaida += Dt.Columns(J).ColumnName + " => " + Dt.Rows(I)(J).ToString + vbCrLf
+            Next
+            MsgBox(vSaida)
+        Next
+
+        MsgBox(Dt.Rows(1)("Conta").ToString)
+
+        Dim Dt2 As New DataTable
+        Dt2.Columns.Add(CriarColuna("CPF", "System.String"))
+        Dt2.Columns.Add(CriarColuna("Nome", "System.String"))
+        Dt2.Columns.Add(CriarColuna("Profissao", "System.String"))
+
+        Dt2.TableName = "Clientes"
+
+        For I As Integer = 0 To Cliente.Count - 1
+            Dim ClienteAtual As Cliente = Cliente(I)
+            Dim Dr As DataRow = Dt2.NewRow
+
+            Dr(0) = ClienteAtual.cpf
+            Dr(1) = ClienteAtual.nome
+            Dr(2) = ClienteAtual.profissao
+
+            Dt2.Rows.Add(Dr)
+        Next
+
+        Dim DS As New DataSet
+        DS.Tables.Add(Dt)
+        DS.Tables.Add(Dt2)
+
+        MsgBox(DS.Tables("Contas Correntes").Rows(1)("Conta").ToString)
+
+        For I As Integer = 0 To DS.Tables.Count - 1
+            Dim DtX As New DataTable
+            DtX = DS.Tables(I)
+            For J As Integer = 0 To DtX.Rows.Count - 1
+                Dim vSaida As String = ""
+                For K As Integer = 0 To DtX.Columns.Count - 1
+                    vSaida += "Tabela => " + DS.Tables(I).TableName.ToString +
+                    " - Campo => " + DtX.Columns(K).ColumnName +
+                    " - Valor => " + DtX.Rows(J)(K).ToString + vbCrLf
+                Next
+                MsgBox(vSaida)
+            Next
+        Next
+
+    End Sub
+
+    Function CriarCliente(cpf As String, nome As String, profissao As String) As Cliente
+        Dim C As New Cliente
+        C.cpf = cpf
+        C.nome = nome
+        C.profissao = profissao
+
+        Return C
+    End Function
+
+    Function CriarColuna(NomeColuna As String, TipColuna As String) As DataColumn
+        Dim Dc As New DataColumn
+        Dc.ColumnName = NomeColuna
+        Dc.DataType = System.Type.GetType(TipColuna)
+
+        Return Dc
+    End Function
 End Class
