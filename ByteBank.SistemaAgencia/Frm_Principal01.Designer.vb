@@ -30,6 +30,7 @@ Partial Class Frm_Principal01
         Me.ContasCorrentesAgenciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContasCorrentesAgenciaDicToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SimulaçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManutençãoListViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -44,7 +45,7 @@ Partial Class Frm_Principal01
         '
         'ArquivoToolStripMenuItem
         '
-        Me.ArquivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContasCorrentesArrayToolStripMenuItem, Me.ContasCorrentesListasToolStripMenuItem, Me.ContasCorrentesAgenciaToolStripMenuItem, Me.ContasCorrentesAgenciaDicToolStripMenuItem, Me.SimulaçãoToolStripMenuItem})
+        Me.ArquivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContasCorrentesArrayToolStripMenuItem, Me.ContasCorrentesListasToolStripMenuItem, Me.ContasCorrentesAgenciaToolStripMenuItem, Me.ContasCorrentesAgenciaDicToolStripMenuItem, Me.SimulaçãoToolStripMenuItem, Me.ManutençãoListViewToolStripMenuItem})
         Me.ArquivoToolStripMenuItem.Name = "ArquivoToolStripMenuItem"
         Me.ArquivoToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.ArquivoToolStripMenuItem.Text = "Arquivo"
@@ -79,6 +80,12 @@ Partial Class Frm_Principal01
         Me.SimulaçãoToolStripMenuItem.Size = New System.Drawing.Size(231, 22)
         Me.SimulaçãoToolStripMenuItem.Text = "Simulação"
         '
+        'ManutençãoListViewToolStripMenuItem
+        '
+        Me.ManutençãoListViewToolStripMenuItem.Name = "ManutençãoListViewToolStripMenuItem"
+        Me.ManutençãoListViewToolStripMenuItem.Size = New System.Drawing.Size(231, 22)
+        Me.ManutençãoListViewToolStripMenuItem.Text = "Manutenção ListView"
+        '
         'Frm_Principal01
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -105,4 +112,5 @@ Partial Class Frm_Principal01
     Friend WithEvents ContasCorrentesAgenciaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContasCorrentesAgenciaDicToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SimulaçãoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ManutençãoListViewToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -281,4 +281,44 @@ Public Class Frm_TesteLista
 
         MsgBox("Lista de contas concatenadas " + String.Join(",", ListaAuxiliarComcatenada2))
     End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Dim Conta1 As New ContaCorrente(277, 223444, "João")
+        Conta1.Depositar(10000)
+
+        Dim Conta2 As New ContaCorrente(277, 255645, "Pedro")
+        Conta2.Depositar(5000)
+
+        Dim Conta3 As New ContaCorrente(500, 166323, "Alberto")
+        Conta3.Depositar(7000)
+
+        Dim ListaContasCorrentes As New List(Of ContaCorrente)
+
+        ListaContasCorrentes.Add(Conta1)
+        ListaContasCorrentes.Add(Conta2)
+        ListaContasCorrentes.Add(Conta3)
+
+        Dim Conta4 As New ContaCorrente(300, 881933, "Jorge")
+        Conta4.Depositar(8500)
+
+        Dim Conta5 As New ContaCorrente(305, 177383, "Lucia")
+        Conta5.Depositar(9500)
+
+        Dim Conta6 As New ContaCorrente(400, 866665, "Victor")
+
+        Dim ListaContasCorrentes2 As New List(Of ContaCorrente)
+
+        ListaContasCorrentes2.Add(Conta4)
+        ListaContasCorrentes2.Add(Conta5)
+        ListaContasCorrentes2.Add(Conta6)
+
+        Dim ListaAuxiliar As IEnumerable(Of ContaCorrente) = ListaContasCorrentes _
+        .Where(Function(conta As ContaCorrente) conta.agencia <> 500) _
+        .Concat(ListaContasCorrentes2) _
+        .Where(Function(conta As ContaCorrente) conta.agencia <> 400) _
+        .OrderBy(Function(conta As ContaCorrente) conta.titular.nome)
+
+        MsgBox("Lista de contas concatenadas " + String.Join(",", ListaAuxiliar))
+
+    End Sub
 End Class
